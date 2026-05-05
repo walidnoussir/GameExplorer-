@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import GamesPage from "./pages/GamesPage";
 import CreatorsPage from "./pages/CreatorsPage";
 import NavBar from "./components/NavBar";
+import CreatorProfile from "./components/Creators/CreatorProfile";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="games" element={<GamesPage />} />
         <Route path="creators" element={<CreatorsPage />} />
+        <Route path="/creatorProfile/:id" element={<CreatorProfile />} />
       </Routes>
     </BrowserRouter>
   );

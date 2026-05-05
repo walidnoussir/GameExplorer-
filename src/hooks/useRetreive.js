@@ -19,9 +19,8 @@ const useRetreive = (api_url) => {
         setLoading(false);
       }
     };
-
     fetchGameData();
-  });
+  }, [api_url]);
 
   return {
     loading,
