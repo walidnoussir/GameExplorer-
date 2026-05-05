@@ -1,5 +1,5 @@
 function CreatorsPage() {
-  return <div></div>;
+  return <div>CreatorsPage</div>;
 }
 
 export default CreatorsPage;
