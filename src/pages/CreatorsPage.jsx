@@ -1,5 +1,11 @@
+import CreatorList from "../components/Creators/CreatorList";
+
 function CreatorsPage() {
-  return <div>Hhhhh</div>;
+  return (
+    <div>
+      <CreatorList />
+    </div>
+  );
 }
 
 export default CreatorsPage;
