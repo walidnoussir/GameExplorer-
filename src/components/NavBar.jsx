@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 function NavBar() {
   return (
-    <div className="flex items-center justify-between bg-slate-800 px-12 py-4 mb-5 shadow-2xl shadow-slate-900/50">
+    <div className="flex items-center justify-between bg-slate-800 px-12 py-2 shadow-2xl shadow-slate-900">
       <Link to="/">
         <Logo />
       </Link>

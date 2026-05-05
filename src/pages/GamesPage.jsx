@@ -1,5 +1,5 @@
 function GamesPage() {
-  return <div>GamesPage</div>;
+  return <div className="bg-slate-900 h-full">GamesPage</div>;
 }
 
 export default GamesPage;
