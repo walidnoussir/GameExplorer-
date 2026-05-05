@@ -17,7 +17,7 @@ function CreatorProfile() {
     return <div>{error.message}</div>;
   } else {
     return (
-      <div className="bg-slate-900">
+      <div className="bg-slate-900 min-h-screen">
         <div className="text-white">{data.name}</div>
       </div>
     );
