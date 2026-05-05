@@ -1,5 +1,9 @@
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const secretKey = import.meta.env.VITE_SECRET_KEY;
-const apiKey = baseUrl + "creators?" + secretKey;
+const creatorsUrl = baseUrl + "creators?" + secretKey;
 
-export { apiKey };
+const creatorUrl = (creatorId) => {
+  return `${baseUrl}creators/${creatorId}?${secretKey}`;
+};
+
+export { creatorsUrl, baseUrl, secretKey, creatorUrl };
