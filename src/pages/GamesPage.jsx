@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom" // ← بدل useNavigate
+import { Link } from "react-router-dom"
 import axios from "axios"
 
 const API_KEY = "9fe5f5d4da204bac8dbfda225c150524"

@@ -23,9 +23,10 @@ function GameDetailsPage() {
     }
     fetchGeme();
   }, [game_id]);
-  if (!game) {
-    return <h3>Loading...</h3>;
-  }
+  // if (!game) {
+  //   return <h3>Loading...</h3>;
+  // }
+  if (game) return <Spinner />;
   return (
     <div>
       {/* <img src ={game.background_image}  alt ={game.name} /> */}
