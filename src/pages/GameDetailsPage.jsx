@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Spinner from "../components/ui/Spinner";
 
 function GameDetailsPage() {
   const [game, setGeme] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
   const { game_id } = useParams();
   const Api_key = "9fe5f5d4da204bac8dbfda225c150524";
   useEffect(() => {
@@ -19,14 +22,18 @@ function GameDetailsPage() {
         setGeme(response.data);
       } catch (error) {
         console.error("Error:", error);
+      } finally {
+        setIsLoading(false);
       }
     }
     fetchGeme();
   }, [game_id]);
+  console.log(game);
+  
   // if (!game) {
   //   return <h3>Loading...</h3>;
   // }
-  if (game) return <Spinner />;
+  if (isLoading) return <Spinner />;
   return (
     <div>
       {/* <img src ={game.background_image}  alt ={game.name} /> */}

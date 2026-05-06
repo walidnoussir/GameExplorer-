@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useRetreive = (api_url) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-  const [error, setError] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchGameData = async () => {
@@ -19,9 +19,8 @@ const useRetreive = (api_url) => {
         setLoading(false);
       }
     };
-
     fetchGameData();
-  });
+  }, [api_url]);
 
   return {
     loading,

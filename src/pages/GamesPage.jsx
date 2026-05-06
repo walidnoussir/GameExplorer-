@@ -1,53 +1,23 @@
-import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import axios from "axios"
-
-const API_KEY = "9fe5f5d4da204bac8dbfda225c150524"
+import GamesLists from "../components/games/GamesLists";
+import Spinner from "../components/ui/Spinner";
+import useRetreive from "../hooks/useRetreive";
 
 function GamesPage() {
-  const [games, setGames] = useState([])
-  const [loading, setLoading] = useState(true)
+  const apiKey = import.meta.env.VITE_RAWG_API_KEY;
+  const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}`;
 
-  useEffect(() => {
-    async function fetchGames() {
-      try {
-        const response = await axios.get(
-          `https://api.rawg.io/api/games?key=${API_KEY}`
-        )
-        setGames(response.data.results)
-        setLoading(false)
-      } catch (error) {
-        console.error("Error:", error)
-      }
-    }
-    fetchGames()
-  }, [])
+  console.log(apiUrl);
+  const { data, loading: isLoading, error } = useRetreive(apiUrl);
 
-  if (loading) return <h3 className="text-white">Loading...</h3>
+  console.log(data);
+
+  if (isLoading) return <Spinner />;
 
   return (
-    <div className="bg-slate-900 h-full p-6">
-      <div className="grid grid-cols-4 gap-4">
-        {games.map((game) => (
-          <Link 
-            to={`/games/${game.id}`} 
-            key={game.id}
-            className="bg-slate-700 rounded-lg hover:bg-slate-600"
-          >
-            <img
-              src={game.background_image}
-              alt={game.name}
-              className="w-full h-40 object-cover rounded-t-lg"
-            />
-            <div className="p-3">
-              <h3 className="text-white font-bold">{game.name}</h3>
-              <p className="text-slate-400 text-sm">⭐ {game.rating}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
+    <div>
+      <GamesLists data={data} />
     </div>
-  )
+  );
 }
 
-export default GamesPage
+export default GamesPage;
