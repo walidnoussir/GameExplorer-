@@ -1,6 +1,6 @@
 import { useState } from "react";
 import GameCard from "./GameCard";
-import { MoveLeft, MoveRight } from "lucide-react";
+import { SkipBack, SkipForward } from "lucide-react";
 
 function GamesLists({ data }) {
   const itemsPerPage = 8;
@@ -34,8 +34,7 @@ function GamesLists({ data }) {
           onClick={handlePrevious}
           disabled={currPage == 1}
         >
-          <MoveLeft className="text-white" />
-          Previous
+          <SkipBack />
         </button>
         <p className="text-white font-bold px-2 bg-blue-500 rounded-md">
           {currPage}
@@ -45,8 +44,7 @@ function GamesLists({ data }) {
           onClick={handleNext}
           disabled={endIndex >= data.results.length}
         >
-          Next
-          <MoveRight className="text-white" />
+          <SkipForward />
         </button>
       </div>
     </div>

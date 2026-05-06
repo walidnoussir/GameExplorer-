@@ -6,10 +6,7 @@ function GamesPage() {
   const apiKey = import.meta.env.VITE_RAWG_API_KEY;
   const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}`;
 
-  console.log(apiUrl);
   const { data, loading: isLoading, error } = useRetreive(apiUrl);
-
-  console.log(data);
 
   if (error) console.log(error);
 
