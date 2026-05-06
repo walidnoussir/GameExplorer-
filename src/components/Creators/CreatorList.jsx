@@ -1,22 +1,23 @@
 import CreatorCard from "./CreatorCard";
 import useRetreive from "../../hooks/useRetreive.js";
+import SpinnerBaseColorCyanHalf from "../SpinnerBaseColorCyanHalf.jsx";
+import { creatorsUrl } from "../../utilities/utility.js";
 function CreatorList() {
-  const baseUrl = import.meta.env.VITE_BASE_URL;
-  const secretKey = import.meta.env.VITE_SECRET_KEY;
-  const apiKey = baseUrl + "creators?" + secretKey;
-
-  const { loading, error, data } = useRetreive(apiKey);
+  const { loading, error, data } = useRetreive(creatorsUrl);
 
   if (loading) {
-    return <div>Loading</div>;
+    return (
+      <div className="relative z-10 min-h-screen flex justify-center items-center">
+        <SpinnerBaseColorCyanHalf />
+      </div>
+    );
   } else if (error) {
     return <div>{error.message}</div>;
   } else {
-    console.log("Data", data.results);
     return (
       <div className="grid md:grid-cols-4 gap-2.5 m-2 sm:grid-cols-3">
         {data.results.map((creator) => (
-          <CreatorCard {...creator} />
+          <CreatorCard key={creator.id} {...creator} />
         ))}
       </div>
     );
