@@ -11,10 +11,12 @@ function GamesPage() {
 
   console.log(data);
 
+  if (error) console.log(error);
+
   if (isLoading) return <Spinner />;
 
   return (
-    <div>
+    <div className="py-6 px-12">
       <GamesLists data={data} />
     </div>
   );
