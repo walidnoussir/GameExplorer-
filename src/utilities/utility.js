@@ -6,4 +6,8 @@ const creatorUrl = (creatorId) => {
   return `${baseUrl}creators/${creatorId}?${secretKey}`;
 };
 
-export { creatorsUrl, baseUrl, secretKey, creatorUrl };
+const stripHTML = (description) => {
+  const doc = new DOMParser().parseFromString(description, "text/html");
+  return doc.body.textContent || "";
+};
+export { creatorsUrl, baseUrl, secretKey, creatorUrl, stripHTML };
