@@ -16,7 +16,7 @@ function GamesPage() {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className="py-6 px-12">
+    <div className="w-full px-4 py-6 lg:px-12">
       <GamesLists data={data} />
     </div>
   );
