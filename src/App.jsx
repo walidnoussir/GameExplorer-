@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import GamesPage from "./pages/GamesPage";
 import CreatorsPage from "./pages/CreatorsPage";
 import AppLayout from "./pages/AppLayout";
+import GameDetailsPage from "./pages/GameDetailsPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="games" element={<GamesPage />} />
             <Route path="creators" element={<CreatorsPage />} />
+            <Route path="/games/:game_id" element={<GameDetailsPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
