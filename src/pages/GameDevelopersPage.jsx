@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import Spinner from "../components/ui/Spinner";
 import "../css/GameDevelopersPage.css";
 import useRetreive from "../hooks/useRetreive";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
+// import { faUsers } from "@fortawesome/free-solid-svg-icons";
 
 function GameDevelopersPage() {
   const { id } = useParams();
