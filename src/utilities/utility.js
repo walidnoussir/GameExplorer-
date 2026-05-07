@@ -1,5 +1,5 @@
 const baseUrl = import.meta.env.VITE_BASE_URL;
-const secretKey = import.meta.env.VITE_SECRET_KEY;
+const secretKey = import.meta.env.VITE_RAWG_API_KEY;
 const creatorsUrl = baseUrl + "creators?" + secretKey;
 
 const creatorUrl = (creatorId) => {
