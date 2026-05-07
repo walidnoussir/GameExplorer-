@@ -5,6 +5,7 @@ import CreatorsPage from "./pages/CreatorsPage";
 import AppLayout from "./pages/AppLayout";
 import CreatorProfile from "./components/Creators/CreatorProfile";
 import GameDetailsPage from "./pages/GameDetailsPage";
+import GameDevelopersPage from "./pages/GameDevelopersPage"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      {/* <GameDevelopersPage/> */}
     </div>
   );
 }
