@@ -5,7 +5,7 @@ function AppLayout() {
   return (
     <div className="h-screen overflow-hidden">
       <NavBar />
-      <main className="bg-slate-900 h-full overflow-y-auto">
+      <main className="bg-slate-900 h-[90%] overflow-y-auto">
         <Outlet />
       </main>
     </div>
