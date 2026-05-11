@@ -2,14 +2,15 @@ import { useParams } from "react-router-dom";
 import Spinner from "../components/ui/Spinner";
 import "../css/GameDevelopersPage.css";
 import useRetreive from "../hooks/useRetreive";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
+// import { faUsers } from "@fortawesome/free-solid-svg-icons";
 
 function GameDevelopersPage() {
-  const { id } = useParams();
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const apiUrl = `https://api.rawg.io/api/games/3498?key=${apiKey}`;
+  const { game_id: id } = useParams();
+  const apiKey = import.meta.env.VITE_RAWG_API_KEY;
+  const apiUrl = `https://api.rawg.io/api/games/${id}?key=${apiKey}`;
 
   const { data, loading } = useRetreive(apiUrl);
+  console.log(id);
 
   if (loading) return <Spinner />;
 
@@ -25,9 +26,7 @@ function GameDevelopersPage() {
           <article className="dev-card">
             <div className="img-container">
               <img
-                src={
-                  "https://r2.photoaistudio.com/photo_demo_flux/packages/professional/photos2Results/m/photo8.jpeg"
-                }
+                src={dev.image_background}
               />
             </div>
 

@@ -3,7 +3,7 @@ import Spinner from "../components/ui/Spinner";
 import useRetreive from "../hooks/useRetreive";
 
 function GamesPage() {
-  const apiKey = import.meta.env.VITE_RAWG_API_KEY;
+  const apiKey = "9fe5f5d4da204bac8dbfda225c150524";
   const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}`;
 
   const { data, loading: isLoading, error } = useRetreive(apiUrl);
