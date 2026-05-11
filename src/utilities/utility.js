@@ -1,9 +1,9 @@
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const secretKey = import.meta.env.VITE_RAWG_API_KEY;
-const creatorsUrl = baseUrl + "creators?" + secretKey;
+const creatorsUrl = baseUrl + "creators?" + "key=" + secretKey;
 
 const creatorUrl = (creatorId) => {
-  return `${baseUrl}creators/${creatorId}?${secretKey}`;
+  return `${baseUrl}creators/${creatorId}?key=${secretKey}`;
 };
 
 const stripHTML = (description) => {
