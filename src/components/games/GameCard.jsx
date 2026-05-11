@@ -7,7 +7,7 @@ function GameCard({ game }) {
 
   return (
     <Link to={`/games/${game.id}`}>
-      <div className="bg-slate-700 w-full h-50 rounded-xl cursor-pointer">
+      <div className="bg-slate-700 w-full h-65 rounded-xl cursor-pointer">
         <img
           className="w-full h-[60%] rounded-tr-xl rounded-tl-xl"
           src={background_image}
